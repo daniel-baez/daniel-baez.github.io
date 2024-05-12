@@ -1,0 +1,47 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f9f9f9; /* Light grey background */
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+h1, h2 {
+    color: #204a87;  /* Navy Blue for headers */
+}
+h1 {
+    font-size: 26px;
+    margin-bottom: 0;
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid #cccccc;  /* Light Grey for line under name */
+}
+h2 {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+p, ul {
+    font-size: 16px;
+    color: #666;  /* Darker grey for text */
+}
+a {
+    color: #204a87;  /* Navy Blue for links */
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 8px;
+}
+.section {
+    background-color: #ffffff;  /* White for section backgrounds */
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);  /* Subtle shadow for depth */
+    margin-bottom: 20px;
+
+}
