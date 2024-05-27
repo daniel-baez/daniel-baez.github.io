@@ -1,5 +1,6 @@
 {
     "name": "daniel-baez-app",
+    "homepage": "https://github.com/daniel-baez/daniel-baez.github.io",
     "version": "0.0.1",
     "private": true,
     "dependencies": {
@@ -9,12 +10,11 @@
         "react-scripts": "4.0.3",
         "styled-components": "^5.3.3"
     },
-    "homepage": "https://github.com/daniel-baez/daniel-baez.github.io",
     "scripts": {
         "start": "shadow-cljs watch app",
         "build": "shadow-cljs release app",
         "predeploy": "yarn build",
-        "deploy": "gh-pages -d public"
+        "deploy": "gh-pages -d public -b website"
     },
     "eslintConfig": {
         "extends": [
