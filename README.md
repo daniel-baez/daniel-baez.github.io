@@ -1,115 +1,96 @@
-# React To-Do App
+# README
 
-A simple To-Do List application built with React and Bootstrap. This project demonstrates the use of React components, styled-components, and Bootstrap for styling. The development environment is isolated using Nix and Direnv.
+## Daniel Baez Personal Website
+============================
 
-## Table of Contents
+This is a personal website project for Daniel Baez, built using ClojureScript and Shadow CLJS, with a Reagent interface to React for rendering components.
 
-- [Installation](#installation)
-- [Development Setup](#development-setup)
-- [Running the Application](#running-the-application)
-- [Deployment](#deployment)
-- [License](#license)
+Table of Contents
+-----------------
 
-## Installation
+*   [Setup](#setup)
+*   [Development](#development)
+*   [Building](#building)
+*   [Deployment](#deployment)
+*   [License](#license)
 
-Before you begin, ensure you have the following installed on your machine:
+Setup
+-----
 
-- Node.js
-- Yarn (or npm)
-- Nix
-- Direnv
+### Prerequisites
 
-## Development Setup
+*   [Clojure](https://clojure.org/guides/getting_started)
+*   [Node.js](https://nodejs.org/)
+*   [Yarn](https://yarnpkg.com/)
+*   [Nix](https://nixos.org/nix/)
 
-1. **Clone the Repository**:
+### Nix Environment
 
-    ```bash
-    git clone https://github.com/<your-username>/<your-repo-name>.git
-    cd <your-repo-name>
-    ```
+Ensure your development environment is set up with Nix and Direnv:
 
-2. **Set Up Direnv**:
+1.  **Install Nix:**
+    
+        curl -L https://nixos.org/nix/install | sh
+    
+2.  **Install Direnv:**
+    
+        nix-env -iA nixpkgs.direnv
+    
+3.  **Configure Direnv:**
+    
+    Add the following to your shell configuration file (\`~/.bashrc\`, \`~/.zshrc\`, etc.):
+    
+        eval "$(direnv hook bash)"  # For bash
+        eval "$(direnv hook zsh)"   # For zsh
+    
+4.  **Allow Direnv:**
+    
+    In your project directory, allow Direnv to use the Nix environment:
+    
+        direnv allow
+    
 
-    Ensure Direnv is enabled in your shell configuration. Add the following to your `~/.bashrc` or `~/.zshrc`:
+Development
+-----------
 
-    ```bash
-    eval "$(direnv hook bash)"  # For bash
-    eval "$(direnv hook zsh)"   # For zsh
-    ```
+### Install Dependencies
 
-    Allow Direnv to load the environment:
+Install Node Dependencies:
 
-    ```bash
-    direnv allow
-    ```
-
-3. **Install Dependencies**:
-
-    Use Yarn to install the project dependencies:
-
-    ```bash
     yarn install
-    ```
 
-    If you prefer npm, run:
+### Start Development Server
 
-    ```bash
-    npm install
-    ```
+Start the Shadow CLJS development server:
 
-## Running the Application
+    npx shadow-cljs watch app # or `yarn start`
 
-1. **Start the Development Server**:
+Visit [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
-    ```bash
-    yarn start
-    ```
+Building
+--------
 
-    This will start the development server, and you can open your browser to `http://localhost:3000` to see your To-Do List app in action.
+To create a production build of the application:
 
-## Deployment
+    yarn build
 
-This project uses GitHub Pages for deployment. The deployment script will build the project and publish it to the `website` branch.
+The build output will be in the `public/js` directory.
 
-1. **Build and Deploy**:
+Deployment
+----------
 
-    ```bash
-    yarn deploy
-    ```
+This project uses GitHub Pages for deployment.
 
-    This command will build the React app and publish the contents of the `build` directory to the `website` branch on GitHub.
+1.  **Build the Project:**
+    
+        yarn build
+    
+2.  **Deploy to GitHub Pages:**
+    
+        yarn deploy
+    
 
-## .gitignore
-
-Here's the `.gitignore` file for the project:
-
-    ```
-    # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-    # dependencies
-    /node_modules
-    /.pnp
-    .pnp.js
-
-    # testing
-    /coverage
-
-    # production
-    /build
-
-    # misc
-    .DS_Store
-    .env.local
-    .env.development.local
-    .env.test.local
-    .env.production.local
-    .envrc
-    .env
-    npm-debug.log*
-    yarn-debug.log*
-    yarn-error.log*
-    ```
-
-## License
+License
+-------
 
 This project is licensed under the MIT License.

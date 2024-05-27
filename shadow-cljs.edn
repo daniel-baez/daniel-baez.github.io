@@ -1,0 +1,20 @@
+{:source-paths
+ ["src"]
+
+ :dependencies
+ [[reagent "1.1.0"]]
+
+ :builds
+ {:app
+  {:target :browser
+   :output-dir "public/js"
+   :asset-path "/js"
+   :modules {:main {:init-fn my-app.core/init}}
+   :devtools {:http-root "public"
+              :http-port 3000}
+   :release {:compiler-options {:optimizations :advanced
+                                :pretty-print false
+                                :elide-asserts true}
+             :closure-defines {goog.DEBUG false}
+             :build-hooks [(shadow.cljs.build-report/report)]
+             :source-maps false}}}}
