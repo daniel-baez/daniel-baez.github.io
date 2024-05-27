@@ -3,7 +3,12 @@
     [reagent.core :as reagent]
     [reagent.dom :as rdom]))
 
-(defn app []
+(defn fork-me-ribbon []
+  [:div.github-fork-ribbon
+   [:a {:href "https://github.com/daniel-baez/daniel-baez.github.io"
+        :title "Fork me on GitHub"} "Fork me on GitHub"]])
+
+(defn resume []
   [:div.container
    [:div.header
     [:h1 "Daniel Baez"]
@@ -38,6 +43,11 @@
     [:h2 "Technical Skills"]
     [:ul
      [:li [:strong "Languages:"] " Java, JavaScript, Ruby, Go"]]]])
+
+(defn app []
+  [:div
+   [fork-me-ribbon]
+   [resume]])
 
 (defn init []
   (rdom/render [app]

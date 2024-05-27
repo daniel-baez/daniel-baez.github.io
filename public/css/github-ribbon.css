@@ -1,0 +1,107 @@
+.github-fork-ribbon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    z-index: 1000;
+}
+.github-fork-ribbon a {
+    position: absolute;
+    display: block;
+    width: 200px;
+    padding: 5px 0;
+    background-color: #151513;
+    color: #fff;
+    text-align: center;
+    font: 700 13px/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-decoration: none;
+    text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+    top: 42px;
+    right: -57px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.5);
+}
+.github-fork-ribbon a:hover {
+    background-color: #e05a00;
+}
+
+@media (max-width: 1200px) {
+    .github-fork-ribbon {
+        width: 120px;
+        height: 120px;
+    }
+    .github-fork-ribbon a {
+        width: 170px;
+        top: 34px;
+        right: -47px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 992px) {
+    .github-fork-ribbon {
+        width: 100px;
+        height: 100px;
+    }
+    .github-fork-ribbon a {
+        width: 140px;
+        top: 28px;
+        right: -40px;
+        font-size: 11px;
+    }
+}
+
+@media (max-width: 768px) {
+    .github-fork-ribbon {
+        width: 80px;
+        height: 80px;
+    }
+    .github-fork-ribbon a {
+        width: 110px;
+        top: 22px;
+        right: -34px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .github-fork-ribbon {
+        width: 60px;
+        height: 60px;
+    }
+    .github-fork-ribbon a {
+        width: 80px;
+        top: 16px;
+        right: -28px;
+        font-size: 9px;
+    }
+}
+
+@media (max-width: 400px) {
+    .github-fork-ribbon {
+        width: 50px;
+        height: 50px;
+    }
+    .github-fork-ribbon a {
+        width: 70px;
+        top: 13px;
+        right: -24px;
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 360px) {
+    .github-fork-ribbon {
+        width: 50px;
+        height: 50px;
+    }
+    .github-fork-ribbon a {
+        width: 70px;
+        top: 13px;
+        right: -24px;
+        font-size: 7px;
+    }
+}
