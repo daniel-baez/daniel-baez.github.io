@@ -1,12 +1,14 @@
 (ns my-app.core
  (:require [ajax.core :refer [GET]]
+           [markdown.core :refer [md->html]]
            [reagent.core :as reagent]
            [reagent.dom :as rdom]))
 
 (defn fetch-json []
-  (GET "/data.json"
+  (GET "/resume.md"
        {:handler (fn [response]
                    (println "Fetched JSON:" response)
+                   (println "Fetched JSON:" (md->html response))
                    ;; Add your code to process the response here
                    )
         :error-handler (fn [error]
@@ -24,7 +26,6 @@
     [:p
      [:strong "Senior Software Engineer | Google Cloud Certified"]
      [:br] "San Francisco, California, United States"
-     [:br] "Email: " [:a {:href "mailto:daniel@baezdaniel.cl"} "daniel@baezdaniel.cl"]
      [:br] "LinkedIn: " [:a {:href "https://www.linkedin.com/in/baezdaniel"} "LinkedIn"]
      " | Personal Website: " [:a {:href "http://baezdaniel.cl/"} "Personal Website"]]]
    [:div.section
