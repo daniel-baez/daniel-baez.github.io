@@ -17,4 +17,4 @@
                                 :elide-asserts true}
              :closure-defines {goog.DEBUG false}
              :build-hooks [(shadow.cljs.build-report/report)]
-             :source-maps true}}}}
+             :source-maps false}}}}

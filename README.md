@@ -63,7 +63,7 @@ Install Node Dependencies:
 
 Start the Shadow CLJS development server:
 
-    npx shadow-cljs watch app
+    npx shadow-cljs watch app # or `yarn start`
 
 Visit [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
