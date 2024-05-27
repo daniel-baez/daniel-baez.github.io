@@ -1,7 +1,16 @@
 (ns my-app.core
-  (:require
-    [reagent.core :as reagent]
-    [reagent.dom :as rdom]))
+ (:require [ajax.core :refer [GET]]
+           [reagent.core :as reagent]
+           [reagent.dom :as rdom]))
+
+(defn fetch-json []
+  (GET "/data.json"
+       {:handler (fn [response]
+                   (println "Fetched JSON:" response)
+                   ;; Add your code to process the response here
+                   )
+        :error-handler (fn [error]
+                         (println "Error fetching JSON:" error))}))
 
 (defn fork-me-ribbon []
   [:div.github-fork-ribbon
@@ -50,6 +59,7 @@
    [resume]])
 
 (defn init []
+  (fetch-json)
   (rdom/render [app]
                (.getElementById js/document "root")))
 
