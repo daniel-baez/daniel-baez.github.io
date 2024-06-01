@@ -11,7 +11,7 @@
         "start": "shadow-cljs watch app",
         "build": "shadow-cljs release app",
         "clean": "rimraf public/js/*",
-        "predeploy": "yarn clean && yarn build",
+        "predeploy": "npm run clean && npm run build",
         "deploy": "gh-pages --nojekyll -d public -b website"
     },
     "eslintConfig": {

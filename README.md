@@ -19,10 +19,10 @@ Setup
 
 ### Prerequisites
 
-*   [Clojure](https://clojure.org/guides/getting_started)
-*   [Node.js](https://nodejs.org/)
-*   [Yarn](https://yarnpkg.com/)
 *   [Nix](https://nixos.org/nix/)
+*   [Node.js](https://nodejs.org/)
+*   [Java](https://www.java.com/en/)
+
 
 ### Nix Environment
 
@@ -57,13 +57,13 @@ Development
 
 Install Node Dependencies:
 
-    yarn install
+    npm install
 
 ### Start Development Server
 
 Start the Shadow CLJS development server:
 
-    npx shadow-cljs watch app # or `yarn start`
+    npx shadow-cljs watch app # or `npm run start`
 
 Visit [http://localhost:3000](http://localhost:3000) in your browser to view the app.
 
@@ -72,7 +72,7 @@ Building
 
 To create a production build of the application:
 
-    yarn build
+    npm run build
 
 The build output will be in the `public/js` directory.
 
@@ -83,11 +83,11 @@ This project uses GitHub Pages for deployment.
 
 1.  **Build the Project:**
     
-        yarn build
+        npm run build
     
 2.  **Deploy to GitHub Pages:**
     
-        yarn deploy
+        npm run deploy
     
 
 License
