@@ -45,3 +45,8 @@ jspm_packages/
 
 # Public build output
 /public/js
+
+# Spacemacs temporary files
+*~
+\#*\#
+.\#*
