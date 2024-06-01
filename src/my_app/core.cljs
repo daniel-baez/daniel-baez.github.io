@@ -3,6 +3,11 @@
             [reagent.dom :as rdom]))
 
 (defn download-resume []
+  ;; Send event to Google Analytics
+  (js/gtag "event" "download_resume" 
+           (clj->js {:event_category "button"
+                     :event_label "Download Resume Button"}))
+
   (let [link (.createElement js/document "a")]
     (set! (.-href link) "/resume.pdf")
     (set! (.-download link) "Daniel_Baez_Resume.pdf")
