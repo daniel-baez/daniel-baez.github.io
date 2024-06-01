@@ -1,7 +1,5 @@
 {:source-paths ["src"]
  :dependencies [[reagent "1.1.0"]
-                [markdown-clj "1.10.0"]
-                [hickory "0.7.1"]
                 [cljs-ajax "0.8.1"]]
  :builds {:app
           {:target :browser

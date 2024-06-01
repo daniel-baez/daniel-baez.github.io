@@ -1,12 +1,5 @@
 (ns my-app.core
-  (:require [ajax.core :refer [GET]]
-            [goog.string :as gstring]
-            [goog.string.format]
-            [hickory.core :refer [parse parse-fragment as-hiccup]]
-            [hickory.core :as hickory]
-            [hickory.convert :as convert]
-            [markdown.core :as markdown :refer [md->html]]
-            [reagent.core :as reagent]
+  (:require [reagent.core :as reagent]
             [reagent.dom :as rdom]))
 
 (defn download-resume []
@@ -57,39 +50,10 @@
                            [:ul
                             [:li [:strong "Languages:"] " Java, JavaScript, Ruby, Go"]]]])
 
-(defn pr2 [x]
-  (println x)
-  (js/console.log x)
-  x)
-
-(defn wrap [x]
-  (gstring/format "<div>%s</div>" x))
-
-(defn markdown-to-hiccup [md]
-  (-> md
-      markdown/md->html
-      #_pr2
-      wrap
-      #_pr2
-      hickory/parse
-      #_as-hiccup
-      hickory/as-hickory
-      convert/hickory-to-hiccup))
-
-(defn fetch-json []
-  (GET "/resume.md"
-       {:handler (fn [response]
-                   (println 1 response)
-                   (try
-                     (println (markdown-to-hiccup response))
-                     (catch js/Error e
-                       (println "Error parsing HTML:" e))))
-        :error-handler (fn [error]
-                         (println "Error fetching JSON:" error))}))
-
 (defn fork-me-ribbon []
   [:div.github-fork-ribbon
    [:a {:href "https://github.com/daniel-baez/daniel-baez.github.io" :title "Fork me on GitHub"} "Fork me on GitHub"]])
+
 
 (defn resume []
   @resume-structure)
@@ -100,7 +64,6 @@
    [resume]])
 
 (defn init []
-  (fetch-json)
   (rdom/render [app]
                (.getElementById js/document "root")))
 
