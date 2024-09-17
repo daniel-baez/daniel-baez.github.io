@@ -12,7 +12,8 @@
         "build": "shadow-cljs release app",
         "clean": "rimraf public/js/*",
         "predeploy": "npm run clean && npm run build",
-        "deploy": "gh-pages --nojekyll -d public -b website"
+        "deploy": "npm run predeploy && gh-pages --nojekyll -d public -b website",
+        "gh-pages-help": "gh-pages --help"
     },
     "eslintConfig": {
         "extends": [
