@@ -1,5 +1,7 @@
 {:source-paths ["src"]
  :dependencies [[reagent "1.1.0"]
+                [markdown-to-hiccup "0.6.2"]
+                [org.clojure/core.async "1.6.681"]
                 [cljs-ajax "0.8.1"]]
  :builds {:app
           {:target :browser

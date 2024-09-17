@@ -82,13 +82,12 @@ Deployment
 This project uses GitHub Pages for deployment.
 
 1.  **Build the Project:**
-    
+
         npm run build
-    
+
 2.  **Deploy to GitHub Pages:**
-    
+
         npm run deploy
-    
 
 License
 -------
